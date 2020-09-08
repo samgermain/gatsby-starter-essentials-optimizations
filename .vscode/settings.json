@@ -1,0 +1,18 @@
+{
+    "files.exclude": {
+        // ".cache": true,
+        // "public": true,
+        // ".gitignore": true,
+        // ".prettierignore": true,
+        // ".prettierrc": true,
+        // "LICENSE": true,
+        // "README.md": true,
+        // "package-lock.json": true,
+        // "tsconfig.json": true,
+        // "node_modules": true,
+        // "package.json": true,
+    },
+    "search.exclude":{
+        // "/node_modules": false,
+    }
+}

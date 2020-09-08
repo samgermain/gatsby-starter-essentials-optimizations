@@ -1,0 +1,29 @@
+{
+    "slogan": "We're pretty good with computers",
+    "drawIn": "Free consultation! In person or on the phone. Contact us",
+    "businessNameFull": "Web Dexter Design",
+    "businessNameShort": "Web Dexter",
+    "url":"https://webdexter.ca",
+    "emailJS":{
+        "serviceId": "gmail",
+        "templateId": "contactform",
+        "userId": "TODO: insert user id"
+    },
+    "navLinks":[
+        {"text":"About", "link":"/about"},
+        {"text":"Contact", "link":"/contact"}
+    ],
+    "scrollLinks":[
+        {"text":"Carousel", "link":"Carousel"},
+        {"text":"Email Form", "link":"EmailForm"}
+    ],
+    "recaptchaKey":"TODO: Insert recaptchas Key",
+    "sections": {
+        "contact": {
+            "title": "Contact",
+            "subTitle": "Have a question? Want to book a consultation? Email, Phone, or Text us!",
+            "phone": "(###) ###-####",
+            "email": "example@myemail.com"
+        }
+    }
+}

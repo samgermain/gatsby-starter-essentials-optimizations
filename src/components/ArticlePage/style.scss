@@ -1,0 +1,358 @@
+@import 'node_modules/bootstrap/scss/bootstrap.scss';
+@import "styles/bootstrap-plus/colors.scss";
+
+.writtenBy{
+    margin-left: 4% !important;
+    margin-top: 15px;
+}
+
+.flex-center-row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bs-center-row{
+    @extend .row;
+    align-items: center;
+    justify-content: center;    
+}
+
+figcaption{
+    font-size: 0.7em;
+    text-align: center;
+}
+
+figcaption{
+    height: 10%;
+}
+
+#article-content > hr{
+    height: 1px !important;
+    width: 100%;
+    margin-left: 0;
+}
+
+#article-content {
+    color: #222;
+}
+
+#article-content > p{
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.articleCategoryIcon{
+    margin-bottom: 10px;
+    margin-top: 0px;
+    margin-left: 0 !important;
+}
+
+#articleDate{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 40px;
+    color: $gray-700;
+}
+
+#otherArticles{
+    color: $gray-700;
+}
+
+span > .gatsby-resp-image-wrapper{
+    width: 100%;
+}
+
+// figure > .gatsby-resp-image-wrapper{
+//     height: 90%;
+// }
+
+// img {
+//     object-fit: cover;
+// }
+
+.articleContainer{
+    width: 100%;
+    display: flex;
+    
+}
+
+.amazonJellyInjection{
+    @extend .m-4;
+    float: left;
+}
+
+.jellyOuterContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+    max-width: 100%;
+}
+
+.randomJellySide{
+    width: 80%;
+}
+
+.bottomJelly{
+    width: 100%;
+    
+    margin: auto;
+}
+
+.sideJellyL, .sideJellyR{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sideJellyL{
+    justify-content: space-between;
+    width: 100%;
+    height: 80%;
+    margin: auto;
+    
+}
+
+.sideJellyR{
+    width: 30%;
+    padding-left: 75px;
+    overflow: hidden;
+}
+
+.articleBanner{
+    @extend .col-lg-6;
+    @extend .my-3;
+    margin-left: 20%;
+
+}
+
+.article{
+    width: 50;
+    margin-left: 5%;
+}
+
+.imgRow{
+    @extend .mb-3;
+    @extend .mt-4;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.imgRow > figure{
+    height: 100%;
+}
+
+
+//Markdown classes
+.articleCover {
+    @extend .mb-5;
+    width: 100%;
+    margin: auto;
+}
+
+.articleCover-m250{
+    @extend .articleCover;
+    max-height: 250px;
+    overflow: hidden;
+}
+
+.splitP {
+    @extend .col-sm-6;
+}
+
+.splitImg {
+    @extend .col-sm-6;
+    @extend .p-2;
+}
+
+.wrappedImg {
+  float: right;
+  width: 40%;
+}
+
+// .faCircle {
+//     display: inline-block;
+//     border-radius: 999em;
+//     box-shadow: 0px 0px 2px #888;
+//     padding: 0.25em 0.3em;
+//     background-color: transparent;
+//     width: 1.2em !important;
+//     height: 1.2em;
+//     overflow: visible;
+//     text-rendering: optimizeLegibility;
+// }
+
+.react-share__ShareButton{
+    padding: 5px !important;
+}
+
+.faCircle {
+    width: 1.2em !important;
+    padding: 0.1em;
+}
+
+.notCircledContainer {
+    padding: 0.25em 0.3em;
+}
+
+.faCircleContainer {
+    padding: 0.25em 0.3em;
+    border-radius: 50%;
+    box-shadow: 0px 0px 4px #888;
+}
+
+//Icon Colors
+.fa-reddit, .fa-reddit-alien{
+    color: map-get($fa, reddit);
+}
+.fa-twitter{
+    color: map-get($fa, twitter);
+} 
+.fa-facebook, .fa-facebook-f{
+    color: map-get($fa, facebook);
+}
+.fa-pinterest{
+    color: map-get($fa, pinterest);
+}
+.fa-linkedin, .fa-linkedin-in{
+    color: map-get($fa, linkedin);
+}
+.fa-whatsapp{
+    color: map-get($fa, whatsapp);
+}
+.fa-envelope-open{
+    color: map-get($fa, email);
+}
+
+.shareButtonHr{
+    margin-left: 0;
+    margin-right: 20%;
+}
+
+/**
+#% START
+    Until #% END: create classes like .fr-md-5(fr = float right) which which are used in the markdown files
+    These classes float an image to the side, specify the number of columns that the image takes up, and add some margin to separate the image from the text, with md, sm... it just means this image is only like this for that size
+*/ 
+@mixin f-col($dir){
+    float: $dir;
+    @if $dir == left{   //Add margin on the side of text
+        @extend .mr-3;
+    } @else {
+        @extend .ml-3;
+    }
+}
+
+@for $col from 1 to 8{//12 {
+    .fl-#{$col} {    //classes like .fl-5
+        @include f-col(left);
+        @extend .col-#{$col};    //.col-5, .col-6...
+    }
+    .fr-#{$col} {    //classes like .fr-5
+        @include f-col(right);
+        @extend .col-#{$col};    //.col-5, .col-6...
+    }
+}
+
+@each $bp-name in "sm", "md"{//, "lg", "xl" {   //looping through xs, sm, md, lg, xl and their pixel values 
+    @for $col from 1 to 8{//12 {
+        .fl-#{$bp-name}-#{$col} {    //classes like .fl-md-5
+            @include f-col(left);
+            @extend .col-#{$bp-name}-#{$col};    //.col-5, .col-6...
+        }
+        .fr-#{$bp-name}-#{$col} {    //classes like .fr-md-5
+            @include f-col(right);
+            @extend .col-#{$bp-name}-#{$col};    //.col-5, .col-6...
+        }
+    }
+}
+/**
+#% END
+*/
+
+@media screen and (min-width: map-get($grid-breakpoints, 'lg')) {
+    .shareBlock{
+        padding: 2px 0;
+    }
+}
+
+@media screen and (max-width: map-get($grid-breakpoints, 'lg')) {
+    .article{
+        width: 90%;
+        margin: auto;
+    }
+
+    .articleBanner{
+        margin-left: 4.16%;
+        width: 95%;
+    }
+
+    .faCircleContainer{
+        padding: 0.25em 0.4em;
+    }
+
+    .jellyOuterContainer, .sideJellyR {
+        display: none;
+    }
+
+    .shareButtonHr{
+        margin-right: 10%;
+    }
+
+    .wrappedImg{
+        float: none;
+    }
+}
+
+@media screen and (max-width: map-get($grid-breakpoints, 'sm')) {
+    .titleOfArticle{
+        font-size:2em;
+    } 
+
+    .articleSubTitle{
+        font-size:1.5em;
+    }
+
+    .categoryOfArticle{
+        font-size:1em;
+    }
+}
+
+@media screen and (min-width: "1350px") {
+
+    .sideJellyR{
+        padding-left: 65px;
+    }
+
+}
+
+@media screen and (max-width: "1224px") {
+
+    .sideJellyR{
+        padding-left: 40px;
+    }
+
+}
+
+@media screen and (max-width: "1194px") {
+
+    .sideJellyR{
+        padding-left: 25px;
+    }
+
+}
+
+@media screen and (max-width: "1165px") {
+
+    .sideJellyR{
+        padding-left: 10px;
+    }
+
+}
+
+// @warn $grid-breakpoints

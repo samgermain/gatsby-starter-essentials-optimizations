@@ -1,0 +1,37 @@
+{
+    "compilerOptions": {
+      "module": "commonjs",
+      "target": "esnext",
+      "allowJs": true,
+      "jsx": "react",
+      "lib": ["dom", "es2015", "es2017"],
+      "noEmit": true,
+      "isolatedModules": false,
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "noUnusedLocals": true,
+      "removeComments": false,
+      "preserveConstEnums": true,
+      "typeRoots": ["./types", "./node_modules/@types"],
+      "baseUrl": "./",
+      "allowSyntheticDefaultImports": true,
+      "paths": {
+        "components": ["src/components"],
+        "components/*": ["src/components/*"],
+        "extensions": ["src/extensions"],
+        "extensions/*": ["src/extensions/*"],
+        "pages/*": ["src/pages/*"],
+        "styles/*": ["src/assets/styles/*"],
+        "types": ["src/types"],
+        "types/*": ["src/types/*"],      
+        "interfaces": ["src/interfaces"],
+        "interfaces/*": ["src/interfaces/*"],
+        "data": ["src/data"],
+        "data/*": ["src/data/*"],
+        "hooks/*": ["src/hooks/*"],
+        "svg/*": ["src/assets/images/svg/*"]
+      }
+    },
+    "include": ["./src/**/*"]
+  }
+  

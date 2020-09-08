@@ -1,0 +1,21 @@
+.barTitle{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    
+    font-weight: bold;
+}
+
+.barTitleBar{
+    display: block;
+    background-color: black;
+    height: 2px;
+    opacity: 0.1;
+    flex-grow: 1;
+    margin: 10px;
+}
+
+.barTitleText{
+    margin: 5px;
+}
