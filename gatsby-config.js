@@ -111,8 +111,8 @@ module.exports = {
       resolve: `gatsby-plugin-purgecss`,
       options: {
         // printRejected: true, // Print removed selectors and processed file names
-        purgeOnly: ['src/assets/styles', 'src/components','node_modules/'],
-        ignore: ['node_modules/'],
+        // purgeOnly: ['src/assets/styles', 'src/components','node_modules/'],
+        // ignore: ['node_modules/'],
         whitelist: [],
         whitelistPatterns: []
       }
