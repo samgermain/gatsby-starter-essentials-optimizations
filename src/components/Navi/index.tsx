@@ -5,7 +5,6 @@ import Img from "gatsby-image"
 import * as Scroll from 'react-scroll'
 
 import {MyImageProps, NavLink} from 'interfaces'
-import {Navbar, Nav} from 'react-bootstrap'
 import useOnClickOutside from 'hooks/useOnClickOutside'
 import { Page } from 'types'
 
@@ -242,12 +241,13 @@ const Layout = (
       )
     }else{
       return (
-        <Navbar.Brand 
+        <a
           style={style}
           href={"/"}
+          className="navbar-brand"
         >
           <NavBrandImage />
-        </Navbar.Brand>
+        </a>
       )
     }  
   }
@@ -260,13 +260,13 @@ const Layout = (
         <BurgerMenu dropdown={false} className={`only-lt-${bpSwch} navbar-nav nav-pills`} data-spy='affix' open={open}>
             {children}
         </BurgerMenu>
-        <Navbar style={style} bg="light" expand='md' className='px-4'>
+        <nav style={style} bg="light" expand='md' className='navbar navbar-expand-md navbar-light bg-light px-4'>
           <NavBrand />
-          <Nav variant='pills' className={`only-gt-${bpSwch}`} data-spy='affix' style={styles.nav}>
+          <nav variant='pills' className={`only-gt-${bpSwch} nav nav-pills`} data-spy='affix' style={styles.nav}>
             {children}
-          </Nav>
+          </nav>
           <Burger className={`only-lt-${bpSwch} my-auto`} open={open} setOpen={setOpen} />
-        </Navbar>
+        </nav>
       </div>
     </div>
   )
