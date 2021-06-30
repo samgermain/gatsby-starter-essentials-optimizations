@@ -8,6 +8,8 @@
   Gatsby Starter Basic Website
 </h1>
 
+(Live Demo Website)[https://gatsby-starter-essentials-optimization.netlify.app]
+
 This starter ships a lot of features that you would want for any simple business website. It has a regular navbar, a sticky navbar, a dropdown mobile navbar, carousels, and email forms. It include's Typescript, Bootstrap, FontAwesome, Recaptcha, EmailJs, Preact, Purgecss, SVG, SCSS, React-Share.
 
 Have an idea for an optimization? Create a [pull request](https://github.com/samgermain/gatsby-starter-essentials-optimizations/pulls)
