@@ -1,8 +1,9 @@
 enum Page {
     Article = 'article',
     Home = '/',
-    About = 'About',
-    Contact = 'contact'
+    About = 'about',
+    Contact = 'contact',
+    Four = "404"
 }
 
 export default Page
