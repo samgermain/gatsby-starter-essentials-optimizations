@@ -2,6 +2,7 @@ import React, {useState, useEffect, useRef} from 'react'
 import './style.scss'
 
 import Img from "gatsby-image"
+import {Link} from 'gatsby'
 import * as Scroll from 'react-scroll'
 
 import {MyImageProps, NavLink} from 'interfaces'
@@ -140,8 +141,8 @@ const PageLinks = (
     <>
       {
         links.map(({text, link}) => (
-        <a  
-          href={link}
+        <Link  
+          to={link}
           className={`
             text-nowrap 
             nav-link 
@@ -151,7 +152,7 @@ const PageLinks = (
           style={styles.link}
         >
           {text}
-        </a>
+        </Link>
         ))
       }
     </>
@@ -241,13 +242,13 @@ const Layout = (
       )
     }else{
       return (
-        <a
+        <Link
           style={style}
-          href={"/"}
+          to={"/"}
           className="navbar-brand"
         >
           <NavBrandImage />
-        </a>
+        </Link>
       )
     }  
   }

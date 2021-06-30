@@ -18,9 +18,9 @@
       "paths": {
         "components": ["src/components"],
         "components/*": ["src/components/*"],
-        "extensions": ["src/extensions"],
-        "extensions/*": ["src/extensions/*"],
+        "pages": ["src/pages"],
         "pages/*": ["src/pages/*"],
+        "styles": ["src/assets/styles"],
         "styles/*": ["src/assets/styles/*"],
         "types": ["src/types"],
         "types/*": ["src/types/*"],      
@@ -28,7 +28,9 @@
         "interfaces/*": ["src/interfaces/*"],
         "data": ["src/data"],
         "data/*": ["src/data/*"],
+        "hooks": ["src/hooks"],
         "hooks/*": ["src/hooks/*"],
+        "svg": ["src/assets/images/svg"],
         "svg/*": ["src/assets/images/svg/*"]
       }
     },

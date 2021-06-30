@@ -2,19 +2,20 @@ const path = require(`path`)
 
 module.exports = {
   siteMetadata: {
-    title: `Web Dexter | Saskatoon Website Design and Mobile App Design`,
-    description: `Web Dexter is a web design, and mobile app design company located in Saskatoon, SK. We also do logo design and graphic design.`,
-    author: `Web Dexter Design`,
-    authorDescription: "Saskatoon Web and App Design Company",
+    title: `Gatsby Starter Essentials & Pagespeed Optimization`,
+    description: `Contains all the things that most people would want on a static blog website, like sharing, email form, drop down nav..., and lighthouse optimization plugins`,
+    author: `Sam Germain`,
+    authorDescription: "Full Stack Developer",
     themeColor: "#d2f5fb",
-    siteUrl: "https://webdexter.ca",
+    siteUrl: "https://samgermain.com",
     socialLinks: {
       facebook: "/",
       instagram: "/",
-      linkedin: "https://linkedin.com/company/web-dexter",
-      twitter: "/"
-    }
-    // image: "https://suddenlysask.com/static/54f3be73c004e26215a4a0cbf82c4524/ad85c/suddenly-saskatchewan-logo.webp"
+      linkedin: "https://linkedin.com/in/samgermain",
+      twitter: "/",
+    },
+    image:
+      "https://suddenlysask.com/static/54f3be73c004e26215a4a0cbf82c4524/ad85c/suddenly-saskatchewan-logo.webp",
   },
   plugins: [
     {
@@ -33,9 +34,7 @@ module.exports = {
     },
     {
       resolve: `gatsby-plugin-create-client-paths`,
-      options: { prefixes: [
-        `/contact/*`,
-      ] },
+      options: { prefixes: [`/contact/*`] },
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -53,7 +52,7 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
-          'gatsby-remark-relative-images-v2',
+          "gatsby-remark-relative-images-v2",
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -62,25 +61,24 @@ module.exports = {
               disableBgImageOnAlpha: true,
               linkImagesToOriginal: false,
               withWebp: true,
-              loading: "eager"
-              
+              loading: "eager",
             },
           },
         ],
       },
     },
     {
-      resolve: 'gatsby-plugin-root-import',
+      resolve: "gatsby-plugin-root-import",
       options: {
-        "components": path.join(__dirname, "src/components"),
-        "styles": path.join(__dirname, "src/assets/styles"),
-        "interfaces": path.join(__dirname, "src/interfaces"),
-        "data": path.join(__dirname, 'src/data'),
-        "pages": path.join(__dirname, 'src/pages'),
-        "svg": path.join(__dirname, "src/assets/images/svg"),
-        "hooks": path.join(__dirname, "src/hooks"),
-        "types": path.join(__dirname, "src/types")
-      }
+        components: path.join(__dirname, "src/components"),
+        styles: path.join(__dirname, "src/assets/styles"),
+        interfaces: path.join(__dirname, "src/interfaces"),
+        data: path.join(__dirname, "src/data"),
+        pages: path.join(__dirname, "src/pages"),
+        svg: path.join(__dirname, "src/assets/images/svg"),
+        hooks: path.join(__dirname, "src/hooks"),
+        types: path.join(__dirname, "src/types"),
+      },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -90,32 +88,63 @@ module.exports = {
     `gatsby-plugin-offline`,
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-netlify`,
-    // `gatsby-plugin-preact`,
+    // `gatsby-plugin-preact`, //Gives better page load speeds
     `gatsby-transformer-json`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `data`,
-        path: `${__dirname}/src/data`
-      }
+        path: `${__dirname}/src/data`,
+      },
     },
     {
-      resolve: 'gatsby-plugin-react-svg',
+      resolve: "gatsby-plugin-react-svg",
       options: {
         rule: {
-          include: /svg/
-        }
-      }
+          include: /svg/,
+        },
+      },
     },
-    { 
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Gatsby Starter Essentials & Optimization`,
+        short_name: `starter`,
+        start_url: `/`,
+        background_color: `#fff`,
+        theme_color: `#d2f5fb`,
+        display: `minimal-ui`,
+        icon: `src/assets/images/web-dexter-logo.png`,
+        icon_options: {
+          purpose: `maskable any`,
+        },
+        icons: [
+          {
+            src: `src/assets/images/web-dexter-logo.png`,
+            sizes: `192x192`,
+            type: `image/png`,
+          },
+          {
+            src: `src/assets/images/web-dexter-logo.png`,
+            sizes: `512x512`,
+            type: `image/png`,
+          },
+        ],
+      },
+    },
+    {
       resolve: `gatsby-plugin-purgecss`,
       options: {
         // printRejected: true, // Print removed selectors and processed file names
         // purgeOnly: ['src/assets/styles', 'src/components','node_modules/'],
         // ignore: ['node_modules/'],
         whitelist: [],
-        whitelistPatterns: []
-      }
+        whitelistPatterns: [
+          /svg.*/,
+          /fa.*/,
+          /react-share.*/
+        ],
+      },
     },
   ],
 }

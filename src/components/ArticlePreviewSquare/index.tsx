@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'gatsby'
 import BackgroundImage from 'gatsby-background-image'
 
 import {IArticlePreviewSquare} from 'interfaces'
@@ -36,9 +37,9 @@ export default ({square, className} : {square: IArticlePreviewSquare, className:
   }
 
   return (
-    <a
+    <Link
       className={className}
-      href={slug}
+      to={slug}
     >
       <BackgroundImage
         Tag="section"
@@ -54,6 +55,6 @@ export default ({square, className} : {square: IArticlePreviewSquare, className:
           <h2 style={styles.title}>{title}</h2>
         </div>
       </BackgroundImage>
-    </a>
+    </Link>
   )
 }

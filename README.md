@@ -8,7 +8,9 @@
   Gatsby Starter Basic Website
 </h1>
 
-Kick off your project with this boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React. It has a regular navbar, a sticky navbar, a dropdown mobile navbar, carousels, and email forms. It include's Typescript, Bootstrap, React-Bootstrap, FontAwesome, Recaptcha, EmailJs, Preact, Purgecss, SVG, SCSS.
+This starter ships a lot of features that you would want for any simple business website. It has a regular navbar, a sticky navbar, a dropdown mobile navbar, carousels, and email forms. It include's Typescript, Bootstrap, FontAwesome, Recaptcha, EmailJs, Preact, Purgecss, SVG, SCSS, React-Share.
+
+Have an idea for an optimization? Create a [pull request](https://github.com/samgermain/gatsby-starter-essentials-optimizations/pulls)
 
 _Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.com/docs/gatsby-starters/)._
 
@@ -20,7 +22,7 @@ _Have another more specific idea? You may want to check out our vibrant collecti
 
     ```shell
     # create a new Gatsby site using the default starter
-    gatsby new my-default-starter https://github.com/gatsbyjs/gatsby-starter-default
+    gatsby new my-default-starter https://github.com/samgermain/gatsby-starter-essentials-optimizations
     ```
 
 1.  **Start developing.**
@@ -40,14 +42,69 @@ _Have another more specific idea? You may want to check out our vibrant collecti
 
     Open the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
 
+## Features
+Social Media Sharing
+Email form setup with EmailJS
+Captcha
+Lighthouse Optimizations
+Sticky and mobile navbars
+Carousel
+Tri Window Carousel
+Typescript
+## Dependencies
+@fortawesome/fontawesome-svg-core
+@fortawesome/free-brands-svg-icons 
+@fortawesome/free-solid-svg-icons
+@fortawesome/react-fontawesome
+@pittica/gatsby-plugin-recaptcha
+@types/node
+bootstrap
+emailjs-com
+gatsby
+gatsby-background-image
+gatsby-image
+gatsby-plugin-create-client-paths
+gatsby-plugin-manifest
+gatsby-plugin-netlify
+gatsby-plugin-offline
+gatsby-plugin-purgecss
+gatsby-plugin-react-helmet
+gatsby-plugin-react-svg
+gatsby-plugin-root-import
+gatsby-plugin-sass
+gatsby-plugin-sharp
+gatsby-plugin-sitemap
+gatsby-plugin-typescript
+gatsby-react-router-scroll
+gatsby-remark-images
+gatsby-remark-relative-images-v2
+gatsby-source-filesystem
+gatsby-transformer-json
+gatsby-transformer-remark
+gatsby-transformer-sharp
+node-sass
+prettier
+prop-types
+react
+react-bootstrap
+react-dom
+react-helmet
+react-router-dom
+react-scroll
+react-share
+styled-components
+
 ## 🧐 What's inside?
 
 A quick look at the top-level files and directories you'll see in a Gatsby project.
 
     .
+    ├── .vscode
     ├── node_modules
+    ├── content
     ├── src
     ├── .gitignore
+    ├── .prettierignore
     ├── .prettierrc
     ├── gatsby-browser.js
     ├── gatsby-config.js
@@ -56,31 +113,40 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
     ├── LICENSE
     ├── package-lock.json
     ├── package.json
-    └── README.md
+    ├── README.md
+    └── tsconfig.json
 
-1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
+1.  **`.vscode`**: Vscode settings, you can delete this if you are using a different IDE
 
-2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
+2.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
 
-3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
+3.  **`content`**: Folder containing content for the blog pages
 
-4.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
+4.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
 
-5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.com/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
+5.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
 
-6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.com/docs/gatsby-config/) for more detail).
+6.  **`.prettierignore`**: Files and directories for prettier to ignore
 
-7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.com/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
+7.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
 
-8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.com/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
+8.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.com/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
 
-9.  **`LICENSE`**: This Gatsby starter is licensed under the 0BSD license. This means that you can see this file as a placeholder and replace it with your own license.
+9.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.com/docs/gatsby-config/) for more detail).
 
-10. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
+10.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.com/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
 
-11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
+11.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.com/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
 
-12. **`README.md`**: A text file containing useful reference information about your project.
+12.  **`LICENSE`**: This Gatsby starter is licensed under the 0BSD license. This means that you can see this file as a placeholder and replace it with your own license.
+
+13. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
+
+14. **`package.json`**: A manifest fi le for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
+
+15. **`README.md`**: A text file containing useful reference information about your project.
+
+16. **`tsconfig.json`**: Specifies the root files and the compiler options required to compile the project.
 
 ## 🎓 Learning Gatsby
 
