@@ -15,7 +15,7 @@ module.exports = {
       twitter: "/",
     },
     image:
-      "https://suddenlysask.com/static/54f3be73c004e26215a4a0cbf82c4524/ad85c/suddenly-saskatchewan-logo.webp",
+      "https://suddenlysask.com/static/cc701b5ed9329f7c62ace15b5dfec7e6/d00b9/cat.webp",
   },
   plugins: [
     {
@@ -139,11 +139,7 @@ module.exports = {
         // purgeOnly: ['src/assets/styles', 'src/components','node_modules/'],
         // ignore: ['node_modules/'],
         whitelist: [],
-        whitelistPatterns: [
-          /svg.*/,
-          /fa.*/,
-          /react-share.*/
-        ],
+        whitelistPatterns: [/svg.*/, /fa.*/, /react-share.*/],
       },
     },
   ],

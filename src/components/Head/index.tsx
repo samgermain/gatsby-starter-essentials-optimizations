@@ -39,7 +39,7 @@ export default ({ metadata, page } : {lang?:String, metadata:any, page: Page}) =
     : `${data.dataJson.businessNameFull} | ${metadata.title}`
   : data.dataJson.businessNameFull
   description = metadata && metadata.description ? metadata.description : data.site.siteMetadata.description
-  const image = metadata.image
+  // const image = metadata.image
 
   return (
     <Helmet htmlAttributes={{ lang: "en" }}>
@@ -63,12 +63,12 @@ export default ({ metadata, page } : {lang?:String, metadata:any, page: Page}) =
       <meta property='og:title' content={title} />
       <meta property='og:description' content={description} />
       <meta property='og:type' content='website' />
-      <meta property="og:image" content={image} />
+      <meta property="og:image" content='https://suddenlysask.com/static/cc701b5ed9329f7c62ace15b5dfec7e6/d00b9/cat.webp' />
 
       <meta name='twitter:title' content={title} />
       <meta name='twitter:description' content={description} />
       <meta name='twitter:creator' content={author} />
-      <meta name="twitter:image" content={image} />
+      <meta name="twitter:image" content='https://suddenlysask.com/static/cc701b5ed9329f7c62ace15b5dfec7e6/d00b9/cat.webp' />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:card" content="summary" />
 
