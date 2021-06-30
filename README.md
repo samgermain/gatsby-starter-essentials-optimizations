@@ -46,13 +46,21 @@ _Have another more specific idea? You may want to check out our vibrant collecti
 
 ## Features
 Social Media Sharing
+
 Email form setup with EmailJS
+
 Captcha
+
 Lighthouse Optimizations
+
 Sticky and mobile navbars
+
 Carousel
+
 Tri Window Carousel
+
 Typescript
+
 ## Dependencies
 @fortawesome/fontawesome-svg-core
 @fortawesome/free-brands-svg-icons 
