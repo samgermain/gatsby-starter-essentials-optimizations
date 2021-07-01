@@ -72,6 +72,9 @@ const Header = () => {
       boxShadow: '0 -10px 10px -10px rgba(0,0,0,0.25)',
       overflow: 'hidden'
     },
+    icon: {
+      width: 25
+    },
     socialIcons: {
       position: 'absolute' as const,
       display: 'flex',
@@ -80,6 +83,12 @@ const Header = () => {
       right: 0,
       
       top: "50%"
+    },
+    tag: {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',  
+      height: 40
     }
   }
 
@@ -99,7 +108,13 @@ const Header = () => {
       
       <div style={styles.bottomBlurb}>
         <span style={styles.copyright}>{`© ${data.dataJson.businessNameFull} ${new Date().getFullYear()}`}</span>
-        <span>Website designed by <a href="https://samgermain.com">Sam Germain<FaceIcon/></a></span>
+        <span style={styles.tag}>
+          <span>Website designed by </span>
+          <a href="https://samgermain.com">
+            Sam Germain
+            <FaceIcon style={styles.icon} />
+          </a>
+        </span>
       </div>
       <div className="flex-center-sm-row mr-sm-5 mr-2" style={styles.socialIcons}>
         <div>

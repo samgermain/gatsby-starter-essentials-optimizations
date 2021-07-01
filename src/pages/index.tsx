@@ -12,8 +12,6 @@ const IndexPage = ({data}) => {
   const {
       sections: {
         contact: {
-          title: contact,
-          subTitle: contactSub,
           phone: contactPhone,
           email: contactEmail
         }
@@ -56,10 +54,10 @@ const IndexPage = ({data}) => {
       <div className='mx-auto' style={styles.main}>
         <h1>Hi people</h1>
         <p>This is a simple Gatsby site, with an email form, a carousel, bootstrap, recaptcha and social media shares.</p>
-        <Carousel id="Carousel" squares={squares}  />
+        <Carousel squares={squares}  />
         <div id='EmailForm' className='w-100 flex-center-col'>
-          <h2>{contact}</h2>
-          <h5 className='text-center mt-1' >{contactSub}</h5>
+          <h2>Contact</h2>
+          <h5 className='text-center mt-1' >Have a question? Email, Phone, or Text us!</h5>
           <EmailForm className='w-100 my-5' />
           <p>{contactPhone}</p>
           <p>{contactEmail}</p>
@@ -95,8 +93,6 @@ export const pageQuery = graphql`
     dataJson {
       sections {
         contact {
-            title
-            subTitle
             phone
             email
         }

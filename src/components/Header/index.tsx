@@ -18,7 +18,7 @@ const Header = ({page}) => {
           link
         }
       }
-      logo: file(name: {eq: "gatsby-icon"}) {
+      logo: file(name: {eq: "gatsby-icon-128"}) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid_withWebp_noBase64
@@ -30,8 +30,8 @@ const Header = ({page}) => {
 
   const logoImageProps: MyImageProps = {
     imgProps: navBarProps.logo.childImageSharp.fluid,
-    alt: "Web Dexter Logo",
-    title: "Web Dexter Logo"
+    alt: "Gatsby Logo",
+    title: "Gatsby Logo"
   }
 
   const links: [NavLink] = navBarProps.dataJson.navLinks

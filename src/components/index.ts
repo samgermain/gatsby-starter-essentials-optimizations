@@ -1,5 +1,4 @@
 import ArticlePreviewSquare from './ArticlePreviewSquare'
-import Banner from './Banner'
 import Carousel from './Carousel'
 import EmailForm from './EmailForm'
 import Footer from './Footer'
@@ -11,7 +10,6 @@ import ShareButtons from './ShareButtons'
 
 export {
     ArticlePreviewSquare,
-    Banner,
     Carousel,
     EmailForm,
     Footer,

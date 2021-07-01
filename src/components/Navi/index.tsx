@@ -143,6 +143,7 @@ const PageLinks = (
         links.map(({text, link}) => (
         <Link  
           to={link}
+          key={link}
           className={`
             text-nowrap 
             nav-link 
@@ -173,6 +174,7 @@ const ScrollLinks = (
               nav-link 
               ${className}
             `}
+            key={link}
             to={link}
           >
           {text}
