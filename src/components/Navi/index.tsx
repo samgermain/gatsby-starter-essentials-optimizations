@@ -327,12 +327,12 @@ const styles = {
     zIndex: zIndex.higherer
   },
   navBrand: {
-    width: '80px',
+    width: '50px',
     marginTop: '2px',
     marginBottom: '2px'
   },
   navBrandSticky: {
-    width: '50px',
+    width: '40px',
     marginTop: '0',
     marginBottom: '0'
   },
