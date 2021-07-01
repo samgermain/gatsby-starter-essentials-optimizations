@@ -6,7 +6,6 @@ import {Carousel, EmailForm, Layout} from "components"
 import {Page} from 'types'
 import { IArticlePreviewSquare } from 'interfaces'
 
-
 const IndexPage = ({data}) => {
 
   const {
