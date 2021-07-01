@@ -13,8 +13,6 @@ const ContactPage = ({data}:{data:IContactPageQuery}) => {
         dataJson: {
             sections: {
                 contact: {
-                    title,
-                    subTitle,
                     phone,
                     email
                 }                
@@ -42,8 +40,8 @@ const ContactPage = ({data}:{data:IContactPageQuery}) => {
   return (
     <Layout metadata={metadata} page={Page.Contact}>
         <div className='flex-center-col'>
-            <h1>{title}</h1>
-            <h3 className='mb-5' >{subTitle}</h3>
+            <h1>Contact</h1>
+            <h3 className='mb-5' >Have a question? Want to book a consultation? Email, Phone, or Text us!</h3>
             <div className='w-100 my-5 bs-center-row justify-content-around'>
                 <EmailForm className='w-md-50' />
                 <div className='mb-5 mt-md-0 mt-3 p-5 flex-center-col' style={styles.contactInfo}>

@@ -4,9 +4,8 @@ import {useStaticQuery, graphql} from 'gatsby'
 
 import { faFacebookF, faTwitter, faLinkedinIn, faInstagram, IconDefinition } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon,  } from '@fortawesome/react-fontawesome'
-import {Row} from 'react-bootstrap'
 
-import WebDexterIcon from 'svg/web-dexter-logo.svg'
+import FaceIcon from 'svg/face-icon.svg';
 
 import {FooterNav} from 'components/Navi'
 import {FooterQuery, NavLink} from 'interfaces'
@@ -54,7 +53,7 @@ const Header = () => {
   const styles = {
     bottomBlurb:{
       display: 'flex',
-      flexDirection: 'column',
+      flexDirection: 'column' as const,
       alignItems:'center',
       marginTop: "20px",
       fontSize:'0.7em'
@@ -66,15 +65,15 @@ const Header = () => {
       backgroundColor: data.site.siteMetadata.themeColor,
       bottom: 0,
       display: 'flex',
-      flexDirection: 'column', 
+      flexDirection: 'column' as const, 
       alignItems: 'center',
-      position: 'relative',
+      position: 'relative' as const,
       padding: 10,
       boxShadow: '0 -10px 10px -10px rgba(0,0,0,0.25)',
       overflow: 'hidden'
     },
     socialIcons: {
-      position: 'absolute',
+      position: 'absolute' as const,
       display: 'flex',
       justifyContent: 'flex-end',
       alignItems: 'center',
@@ -100,7 +99,7 @@ const Header = () => {
       
       <div style={styles.bottomBlurb}>
         <span style={styles.copyright}>{`© ${data.dataJson.businessNameFull} ${new Date().getFullYear()}`}</span>
-        <span>Website designed by <a href="https://webdexter.ca"><WebDexterIcon/></a></span>
+        <span>Website designed by <a href="https://samgermain.com">Sam Germain<FaceIcon/></a></span>
       </div>
       <div className="flex-center-sm-row mr-sm-5 mr-2" style={styles.socialIcons}>
         <div>

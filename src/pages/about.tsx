@@ -43,7 +43,7 @@ const IndexPage = ({data}) => {
   return (
     <Layout metadata={metadata} page={Page.About}>
       <div className='mx-auto' style={styles.main}>
-        <Carousel id="Carousel" triple={true} squares={squares}  />
+        <Carousel triple={true} squares={squares}  />
       </div>
     </Layout>
   )

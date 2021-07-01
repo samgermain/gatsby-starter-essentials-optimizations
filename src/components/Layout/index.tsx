@@ -6,7 +6,7 @@
  */
 
 import React from 'react'
-import "./style.css"
+import "./style.scss"
 
 import {Head, Header, Footer} from "components"
 import {Page} from 'types'

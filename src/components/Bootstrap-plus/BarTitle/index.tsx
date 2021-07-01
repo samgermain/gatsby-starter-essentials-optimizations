@@ -1,5 +1,5 @@
 import React from 'react'
-import './style.css'
+import './style.scss'
 
 /**
  * Titled text with bars to the left and right that stretch to the ends of the parent div

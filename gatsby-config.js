@@ -45,7 +45,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/assets/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/assets/images/gatsby-icon-128.png`, // This path is relative to the root of the site.
       },
     },
     {
@@ -114,18 +114,18 @@ module.exports = {
         background_color: `#fff`,
         theme_color: `#d2f5fb`,
         display: `minimal-ui`,
-        icon: `src/assets/images/web-dexter-logo.png`,
+        icon: `src/assets/images/gatsby-icon-128.png`,
         icon_options: {
           purpose: `maskable any`,
         },
         icons: [
           {
-            src: `src/assets/images/web-dexter-logo.png`,
+            src: `src/assets/images/gatsby-icon-128.png`,
             sizes: `192x192`,
             type: `image/png`,
           },
           {
-            src: `src/assets/images/web-dexter-logo.png`,
+            src: `src/assets/images/gatsby-icon-512.png`,
             sizes: `512x512`,
             type: `image/png`,
           },

@@ -29,7 +29,7 @@ const Burger = ({ open, setOpen, ...props }) => {
       top: '5%',
       right: '2rem',
       display: 'flex',
-      flexDirection: 'column',
+      flexDirection: 'column' as const,
       justifyContent: "space-around",
       width: "2rem",
       height: "2rem",
@@ -46,7 +46,7 @@ const Burger = ({ open, setOpen, ...props }) => {
       background: '#0D0C1D',
       borderRadius: 10,
       transition: 'all 0.3s linear',
-      position: 'relative',
+      position: 'relative' as const,
       transformOrigin: 1,
     },
     
@@ -76,8 +76,8 @@ const Burger = ({ open, setOpen, ...props }) => {
 }
 
 const BurgerMenu = (
-  { open, dropdown, navHeight=60, children, ...props }:
-  {open: boolean, dropdown?: boolean, navHeight?: number, children: any}
+  { open, dropdown, navHeight=60, className="", children }:
+  {open: boolean, dropdown?: boolean, navHeight?: number, className?: string, children: any}
 ) => {
 
   const axis = dropdown ? 'Y(-' : 'X('
@@ -86,12 +86,12 @@ const BurgerMenu = (
     ...{
       display: 'flex',
       backgroundColor: bgColor,
-      flexDirection: 'column',
+      flexDirection: 'column' as const,
       justifyContent: 'center',
       height: !dropdown && '100vh',
-      textAlign: 'left',
+      textAlign: 'left' as const,
       padding: '2rem',
-      position: 'absolute',
+      position: 'absolute' as const,
       marginTop: dropdown && navHeight, 
       transform: open ? `translate${axis}0)` : `translate${axis}100%)`,
       top: 0,
@@ -107,7 +107,7 @@ const BurgerMenu = (
       id='burgerMenu'
       style={style}
       aria-hidden={!open}
-      {...props}
+      className={className}
     >
       {children}
     </nav>
@@ -261,9 +261,9 @@ const Layout = (
         <BurgerMenu dropdown={false} className={`only-lt-${bpSwch} navbar-nav nav-pills`} data-spy='affix' open={open}>
             {children}
         </BurgerMenu>
-        <nav style={style} bg="light" expand='md' className='navbar navbar-expand-md navbar-light bg-light px-4'>
+        <nav style={style} className='navbar navbar-expand-md navbar-light bg-light px-4'>
           <NavBrand />
-          <nav variant='pills' className={`only-gt-${bpSwch} nav nav-pills`} data-spy='affix' style={styles.nav}>
+          <nav className={`only-gt-${bpSwch} nav nav-pills`} data-spy='affix' style={styles.nav}>
             {children}
           </nav>
           <Burger className={`only-lt-${bpSwch} my-auto`} open={open} setOpen={setOpen} />
@@ -284,7 +284,7 @@ const ScrollNav = (
   </Layout>
 )
 
-const FooterNav = ({links, page}:{links: [NavLink], page?: string}) => (
+const FooterNav = ({links, page}:{links: [NavLink], page?: Page}) => (
   <nav className='footerNav' style={styles.footerNav}>
     <PageLinks links={links} page={page}/>
   </nav>
@@ -299,7 +299,7 @@ export default ({imgProps, links, page, sticky}:{imgProps:MyImageProps, links: [
 const styles = {
   footerNav:{
     display: 'flex',
-    textAlign: 'center'
+    textAlign: 'center' as const
   },
   hide: {  
     top: -stickyHeight
@@ -339,7 +339,7 @@ const styles = {
   },
   stickyNav: {
     height: stickyHeight,
-    position: "fixed",
+    position: "fixed" as const,
     top: 0,
     zIndex: zIndex.higher,
     transition: ".3s"

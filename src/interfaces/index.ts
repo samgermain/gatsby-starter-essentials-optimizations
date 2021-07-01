@@ -1,4 +1,4 @@
-import {FluidObject, GatsbyImageProps} from 'gatsby-image'
+import { GatsbyImageProps} from 'gatsby-image'
 
 export interface EmailFormQuery {
     dataJson: {
@@ -115,7 +115,7 @@ export interface IArticlePage{
 export interface IArticlePreviewSquare{
     title: string,
     slug: string,
-    imgProps: FluidObject | FluidObject[]
+    imgProps: GatsbyImageProps
 }
 
 export interface IHeaderQuery{
@@ -133,7 +133,7 @@ export interface IHeaderQuery{
     }
 }
 export interface MyImageProps {
-    imgProps: FluidObject,
+    imgProps: GatsbyImageProps,
     alt: string,
     title: string
 }
@@ -146,7 +146,7 @@ export interface NavLink {
 export interface NavBarProps {
     dataJson: {
         navLinks: [NavLink],
-        scrollLInks: [NavLink]
+        scrollLinks: [NavLink]
     },
     logo: {
         childImageSharp: {

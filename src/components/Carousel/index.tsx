@@ -17,7 +17,7 @@ export default (
     },
     container: {
       width: 'auto',
-      position: 'relative',
+      position: 'relative' as const,
       borderRadius: 5,
       overflow: 'hidden',
     },
@@ -86,6 +86,7 @@ export default (
 
   return (
     <div 
+      id="Carousel"
       style={styles.container}
       {...props}
     >

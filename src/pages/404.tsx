@@ -11,7 +11,7 @@ const NotFoundPage = () => {
   }
 
   return (
-    <Layout metadata={metadata} page={Page.four}>
+    <Layout metadata={metadata} page={Page.Four}>
       <h1>NOT FOUND</h1>
       <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
     </Layout>

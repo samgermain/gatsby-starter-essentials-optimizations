@@ -1,5 +1,5 @@
 import React from 'react'
-import './style.css'
+import './style.scss'
 import {graphql, useStaticQuery} from 'gatsby'
 
 import emailjs from 'emailjs-com'
@@ -18,7 +18,8 @@ const FormControl = (
             name='from_name'
             break
         case 'Email':
-            type, name = 'email', 'from_email'
+            type = 'email'
+            name = 'from_email'
             break
         case 'Subject':      
             name='subject'      

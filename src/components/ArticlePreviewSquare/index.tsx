@@ -18,10 +18,10 @@ export default ({square, className} : {square: IArticlePreviewSquare, className:
     cover: {
         display: 'flex',
         height: '100%',
-        flexDirection: 'column',
+        flexDirection: 'column' as const,
         justifyContent: 'flexEnd',
         alignItems: 'flexEnd',
-        textAlign: 'right',
+        textAlign: 'right' as const,
         backgroundImage: 'linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.6))',
         transition: 'all 2.0s cubic-bezier(.25,.8,.25,1)'
     },
