@@ -45,21 +45,23 @@ _Have another more specific idea? You may want to check out our vibrant collecti
     Open the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
 
 ## Features
-Social Media Sharing
+Social media sharing of articles
 
-Email form setup with EmailJS
+Email contact form setup with EmailJS
 
-Captcha
+ReCaptcha
 
 Lighthouse Optimizations
 
-Sticky and mobile navbars
+Sticky, stationary, and mobile navbars with page links and scroll links
 
-Carousel
-
-Tri Window Carousel
+Article carousel, Tri window carousel
 
 Typescript
+
+Bootstrap
+
+SCSS
 
 ## Dependencies
 @fortawesome/fontawesome-svg-core
@@ -87,7 +89,7 @@ gatsby-plugin-sitemap
 gatsby-plugin-typescript
 gatsby-react-router-scroll
 gatsby-remark-images
-gatsby-remark-relative-images-v2
+gatsby-remark-relative-images
 gatsby-source-filesystem
 gatsby-transformer-json
 gatsby-transformer-remark

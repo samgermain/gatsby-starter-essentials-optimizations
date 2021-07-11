@@ -149,14 +149,14 @@ span > .gatsby-resp-image-wrapper{
 
 
 //Markdown classes
-.articleCover {
+.article-cover {
     @extend .mb-5;
     width: 100%;
     margin: auto;
 }
 
-.articleCover-m250{
-    @extend .articleCover;
+.article-cover-m250{
+    @extend .article-cover;
     max-height: 250px;
     overflow: hidden;
 }

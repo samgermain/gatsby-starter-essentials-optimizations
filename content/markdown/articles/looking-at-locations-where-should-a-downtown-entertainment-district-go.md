@@ -6,23 +6,20 @@ description: "In late 2018, City Council decided that if Saskatoon was to get a 
 featuredImage: ./imgs/looking-at-locations/north-of-midtown-saskatoon.jpg
 ---
 
-<div class='articleCover'>
-    <img alt="North of Midtown, Saskatoon" src="./imgs/looking-at-locations/north-of-midtown-saskatoon.jpg"></img>
+<div class='article-cover'>
+    <img
+        alt="North of Midtown, Saskatoon"
+        src="./imgs/looking-at-locations/north-of-midtown-saskatoon.jpg"
+    ></img>
 </div>
 
 In late 2018, City Council decided that if Saskatoon was to get a new arena, it should be downtown, as part of a larger entertainment district that would include a convention centre. Nearly a year and a half later, no definitive location has been announced and many logistical considerations loom, raising questions about where such a building should go.
-
-<div class='mobileJellyInjection'></div>
 
 Here, three locals weigh in on where downtown the arena and entertainment district should be. For Bertrand Bartake of Kindrachuk Agrey Architecture, the question of where depends on whether the arena would be built together or seperate from a convention centre.
 
 "If we're looking at just an arena, my preference is the Toys "R" Us site, because that site is the most accessible for walking," Bartake said. "That site has connections to Nutana, Riversdale and communities south of Riversdale, plus it gives you the opportunity to walk to bars and restaurants in Broadway, Riversdale and downtown."
 
-
 Bartake said the Toys "R" Us site is not large enough for both an arena and convention centre. When discussing a site that would accommodate both, he says the Midtown parking lot would be an option, and provides access to transit and hotels nearby.
-
-<div class='mobileJellyInjection'></div>
-<div style='clear: both;'></div>
 
 Todd Brandt, the president and CEO of Tourism Saskatoon agrees with the Midtown as a starting point.
 
@@ -30,23 +27,26 @@ Todd Brandt, the president and CEO of Tourism Saskatoon agrees with the Midtown 
 
 <div class="row align-items-center w-100 justify-content-around">
     <figure class='col-sm-5 col-10'>
-        <img alt='Parking lot across the street north from the Saskatoon midtown mall' src='./imgs/looking-at-locations/north-of-midtown-saskatoon.jpg'>
+        <img
+            alt='Parking lot across the street north from the Saskatoon midtown mall'
+            src='./imgs/looking-at-locations/north-of-midtown-saskatoon.jpg'
+        >
         <figcaption>North of Midtown, Saskatoon</figcaption>
     </figure>
     <figure class='col-sm-5 col-10'>
-        <img alt='Toys R Us parking lot across the street South from Saskatoon midtown mall' src='./imgs/looking-at-locations/south-of-midtown-saskatoon.jpg'>
+        <img
+            alt='Toys R Us parking lot across the street South from Saskatoon midtown mall' src='./imgs/looking-at-locations/south-of-midtown-saskatoon.jpg'
+        >
         <figcaption>South of Midtown, Saskatoon</figcaption>
     </figure>
 </div>
-<hr ></hr>
+<hr></hr>
 
 He says that an arena and convention centre don't necessarily need to be attached, but that certain criteria needs to be considered.
 
 "A convention centre needs to be a minimum distance from accommodation facilities and walkability is important. We don't need more accomodations in Saskatoon; we have 5500 hotel rooms now, so we need to utilize that," Brandt said.
 
 Darla Lindbjerg, president and CEO of Saskatoon Chamber of Commerce, says that looking north of Midtown is a good option. She says that Saskatoon's transportation system also needs to grow with such a building. "It is crucial that the city connect an entertainment district to an accessible transportation system - the Bus Rapid Transit for now, but with the capacity as the city grows to adapt into an LRT line," Lindbjerg said. "Although public transportation is key for environmental and parking issues, it is still important that there be extensive parking available."
-
-<div class='mobileJellyInjection'></div>
 
 Bartake notes the downtown is ideal for its proximity to parking.
 
