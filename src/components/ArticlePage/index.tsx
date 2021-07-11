@@ -21,8 +21,6 @@ const ArticleBanner = ({art}:{art:Article}) => (
   </div>
 )
 
-//TODO: Coda: something that can autocomplete arguments maybe
-
 const ArticlePage = ({ data }: { data: IArticlePage }) => {
 
   const art = new Article(data.markdownRemark)

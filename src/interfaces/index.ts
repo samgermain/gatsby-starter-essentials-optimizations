@@ -1,4 +1,4 @@
-import { GatsbyImageProps} from 'gatsby-image'
+import { FluidObject, GatsbyImageProps} from 'gatsby-image'
 
 export interface EmailFormQuery {
     dataJson: {
@@ -40,7 +40,7 @@ export interface IArticle{
         author: string
         description: string
         featuredImage: {
-            childImageSharp:GatsbyImageProps
+            childImageSharp:FluidObject | FluidObject[]
         }
     }
 }
@@ -73,7 +73,7 @@ export interface IHomePageQuery{
                     title: string
                     featuredImage: {
                         childImageSharp: {
-                            fluid: GatsbyImageProps
+                            fluid: FluidObject | FluidObject[]
                         }
                     }
                 }          
@@ -115,7 +115,7 @@ export interface IArticlePage{
 export interface IArticlePreviewSquare{
     title: string,
     slug: string,
-    imgProps: GatsbyImageProps
+    imgProps: FluidObject | FluidObject[]
 }
 
 export interface IHeaderQuery{
@@ -133,7 +133,7 @@ export interface IHeaderQuery{
     }
 }
 export interface MyImageProps {
-    imgProps: GatsbyImageProps,
+    imgProps: FluidObject | FluidObject[],
     alt: string,
     title: string
 }
@@ -150,7 +150,7 @@ export interface NavBarProps {
     },
     logo: {
         childImageSharp: {
-          fluid: GatsbyImageProps
+          fluid: FluidObject | FluidObject[]
         }
     }
 }

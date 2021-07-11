@@ -1,35 +1,51 @@
-import React from 'react'
-import './style.scss'
-import {graphql, useStaticQuery} from 'gatsby'
+import React from 'react';
+import './style.scss';
+import {graphql, useStaticQuery} from 'gatsby';
 
-import emailjs from 'emailjs-com'
 //Visit this StackOverflow answer for instructions on how to use emailjs https://stackoverflow.com/a/61582486/6331353
-import {Form, Row, Col, Button} from 'react-bootstrap'
-
-import {EmailFormQuery} from 'interfaces'
+import emailjs from 'emailjs-com';
+import {EmailFormQuery} from 'interfaces';
 
 const FormControl = (
-    {label} : {label : string}
-    ) => {
-    let type = "text"
-    let name
+    {label, className="", ...props} : 
+    {label : string, className? : string}
+) => {
+
+    let type = "text";
+    let name: string;
+
     switch (label) {
         case 'Name':
-            name='from_name'
-            break
+            name='from_name';
+            break;
         case 'Email':
-            type = 'email'
-            name = 'from_email'
-            break
+            type = 'email';
+            name = 'from_email';
+            break;
         case 'Subject':      
-            name='subject'      
-            break
+            name='subject';
+            break;
         case 'Message':
-            return <Form.Control as="textarea" name='html_message' placeholder={label} />
-            break
-    }
-    return <Form.Control as="input" type={type} name={name} placeholder={label} />
-}
+            return (
+                <textarea 
+                    name='html_message'
+                    placeholder={label}
+                    className={`form-control ${className}`}
+                />
+            );
+            break;
+    };
+
+    return (
+        <input 
+            type={type} 
+            name={name} 
+            placeholder={label} 
+            className={`form-control ${className}`}
+            {...props}
+        />
+    );
+};
 
 export default (props) => {
 
@@ -44,43 +60,45 @@ export default (props) => {
                 recaptchaKey
             }
         }
-    `)
+    `);
 
     const sendEmail = function(e){
-        e.preventDefault();    //This is important, i'm not sure why, but the email won't send without it
-        const {serviceId, templateId, userId} = data.dataJson.emailJS
+        e.preventDefault();    //This is important, but the email won't send without it
+        const {serviceId, templateId, userId} = data.dataJson.emailJS;
         emailjs.sendForm(serviceId, templateId, e.target, userId).then((result) => {
-            window.location.reload()  //This is if you still want the page to reload (since e.preventDefault() cancelled that behavior) 
+            //This is if you still want the page to reload (since e.preventDefault() cancelled that behavior) 
+            window.location.reload();
         }, (error) => {
             console.log(error.text);
         });
-    }
+    };
 
     return (
-        <Form id='emailForm' {...props} onSubmit={sendEmail}>
+        <form id='emailForm' onSubmit={sendEmail} {...props}>
             {['Name', 'Email', 'Subject', 'Message'].map(label => (
-                <Form.Group as={Row}>
-                    <Form.Label column sm={2} >
+                <div className="row my-2">
+                    <label className="col-sm-2"  >
                         {label}
-                    </Form.Label>
-                    <Col sm={10} >
+                    </label>
+                    <div className="col-sm-10" >
                         <FormControl label={label} />
-                    </Col>
-                </Form.Group>
+                    </div>
+                </div>
             ))}
-            <Row sm={10} className='ml-auto'>
-                <div className="m-auto m-sm-0 g-recaptcha" data-sitekey={data.dataJson.recaptchaKey}></div>
-                <Form.Group className='ml-auto mb-md-auto'>
-                    <Button 
-                        variant="primary"
-                        className='mt-2 ml-2 mt-sm-0 mr-2'
+            <div className='row col-sm-10 ml-auto'>
+                <div 
+                    className="m-auto m-sm-0 g-recaptcha" 
+                    data-sitekey={data.dataJson.recaptchaKey}
+                ></div>
+                <div className='ml-auto mb-md-auto'>
+                    <button
+                        className='mt-2 ml-2 mt-sm-0 mr-2 btn btn-primary'
                         type="submit"
                     >
                         Submit
-                    </Button>
-                </Form.Group>
-            </Row>
-        </Form>
-
-    )
-}
+                    </button>
+                </div>
+            </div>
+        </form>
+    );
+};

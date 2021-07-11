@@ -116,8 +116,9 @@ const BurgerMenu = (
 
 
 const ScrollLink = (
-  {to, className, children, style} : {to : string, className? : string, children: any, style?:any}
-  ) => {
+  {to, className, children, style} : 
+  {to : string, className? : string, children: any, style?:any}
+) => {
   return (
     <Scroll.Link
       to={to}
@@ -135,7 +136,8 @@ const ScrollLink = (
 }
 
 const PageLinks = (
-  {className, page, links} : { className? : string, page: Page, links: [NavLink]}
+  {className, page, links} : 
+  { className? : string, page: Page, links: [NavLink]}
 ) => {
   return (
     <>
@@ -185,7 +187,8 @@ const ScrollLinks = (
 }
 
 const Layout = (
-  {imgProps, sticky, page, children} : {imgProps:MyImageProps, sticky?:boolean, page: Page, children:any}
+  {imgProps, sticky, page, children} : 
+  {imgProps:MyImageProps, sticky?:boolean, page: Page, children:any}
 ) => {
   
   const [isHidden, setIsHidden] = useState(true);
@@ -279,7 +282,8 @@ const Layout = (
 
 
 const ScrollNav = (
-  {imgProps, links, sticky, page}:{imgProps:MyImageProps, links: [NavLink], sticky?: boolean, page: Page}
+  {imgProps, links, sticky, page}:
+  {imgProps:MyImageProps, links: [NavLink], sticky?: boolean, page: Page}
 ) => (
   <Layout {...{imgProps, sticky, page}}>
     <ScrollLinks links={links} />
@@ -327,12 +331,12 @@ const styles = {
     zIndex: zIndex.higherer
   },
   navBrand: {
-    width: '50px',
+    width: 40,
     marginTop: '2px',
     marginBottom: '2px'
   },
   navBrandSticky: {
-    width: '40px',
+    width: 40,
     marginTop: '0',
     marginBottom: '0'
   },
