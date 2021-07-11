@@ -28,7 +28,8 @@ const ContactPage = ({data}:{data:IContactPageQuery}) => {
     const styles = {
         contactInfo:{
             backgroundColor: themeColor,
-            borderRadius: '50%'
+            borderRadius: '50%',
+            maxWidth: 300
         }
     }
 

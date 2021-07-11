@@ -50,11 +50,11 @@ const IndexPage = ({data}) => {
 
   return (
     <Layout metadata={metadata} page={Page.Home}>
-      <div className='mx-auto' style={styles.main}>
+      <div className='mx-auto col-sm-10 ' style={styles.main}>
         <h1>Hi people</h1>
         <p>This is a simple Gatsby site, with an email form, a carousel, bootstrap, recaptcha and social media shares.</p>
         <Carousel squares={squares}  />
-        <div id='EmailForm' className='w-100 flex-center-col'>
+        <div id='EmailForm' className='col-10 mx-auto flex-center-col'>
           <h2>Contact</h2>
           <h5 className='text-center mt-1' >Have a question? Email, Phone, or Text us!</h5>
           <EmailForm className='w-100 my-5' />

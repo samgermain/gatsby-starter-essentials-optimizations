@@ -47,7 +47,10 @@ const FormControl = (
     );
 };
 
-export default (props) => {
+export default (
+    {className="", ...props} : 
+    {className? : string}
+) => {
 
     const data: EmailFormQuery = useStaticQuery(graphql`
         query EmailFormQuery {
@@ -74,9 +77,14 @@ export default (props) => {
     };
 
     return (
-        <form id='emailForm' onSubmit={sendEmail} {...props}>
+        <form 
+            id='email-form' 
+            className={`d-flex flex-column align-items-start ${className}`}
+            onSubmit={sendEmail} 
+            {...props}
+        >
             {['Name', 'Email', 'Subject', 'Message'].map(label => (
-                <div className="row my-2">
+                <div className="row w-100 my-2">
                     <label className="col-sm-2"  >
                         {label}
                     </label>
@@ -85,19 +93,26 @@ export default (props) => {
                     </div>
                 </div>
             ))}
-            <div className='row col-sm-10 ml-auto'>
+            <div 
+                className='
+                    d-flex 
+                    flex-md-row 
+                    flex-column 
+                    justify-content-between 
+                    align-items-end 
+                    w-100
+                '
+            >
                 <div 
                     className="m-auto m-sm-0 g-recaptcha" 
                     data-sitekey={data.dataJson.recaptchaKey}
                 ></div>
-                <div className='ml-auto mb-md-auto'>
-                    <button
-                        className='mt-2 ml-2 mt-sm-0 mr-2 btn btn-primary'
-                        type="submit"
-                    >
-                        Submit
-                    </button>
-                </div>
+                <button
+                    className='mt-2 ml-auto mt-sm-0 mr-2 btn btn-primary'
+                    type="submit"
+                >
+                    Submit
+                </button>
             </div>
         </form>
     );
