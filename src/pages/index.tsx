@@ -67,34 +67,31 @@ const IndexPage = ({data}) => {
 
 export default IndexPage
 
-export const pageQuery = graphql`
-  query{
-    allMarkdownRemark {
-      edges{
-        node{
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-            featuredImage {
-              childImageSharp {
-                fluid(maxWidth: 1950) {
-                  ...GatsbyImageSharpFluid_withWebp_noBase64
-                }
-              }
-            }
-          }          
+export const pageQuery = graphql`{
+  allMarkdownRemark {
+    edges {
+      node {
+        fields {
+          slug
         }
-      }
-    }
-    dataJson {
-      sections {
-        contact {
-            phone
-            email
+        frontmatter {
+          title
+          featuredImage {
+            childImageSharp {
+              gatsbyImageData(placeholder: NONE, layout: FULL_WIDTH)
+            }
+          }
         }
       }
     }
   }
+  dataJson {
+    sections {
+      contact {
+        phone
+        email
+      }
+    }
+  }
+}
 `

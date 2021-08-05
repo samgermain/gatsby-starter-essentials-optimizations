@@ -1,6 +1,7 @@
 const path = require(`path`)
 
 module.exports = {
+  
   siteMetadata: {
     title: `Gatsby Starter Essentials & Pagespeed Optimization`,
     description: `Contains all the things that most people would want on a static blog website, like sharing, email form, drop down nav..., and lighthouse optimization plugins`,
@@ -17,6 +18,9 @@ module.exports = {
     },
     image:
       "https://suddenlysask.com/static/cc701b5ed9329f7c62ace15b5dfec7e6/d00b9/cat.webp",
+  },
+  flags:{
+    DEV_SSR: true
   },
   plugins: [
     {
@@ -69,8 +73,9 @@ module.exports = {
         types: path.join(__dirname, "src/types"),
       },
     },
-    `gatsby-transformer-sharp`,
+    `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     `gatsby-plugin-typescript`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
