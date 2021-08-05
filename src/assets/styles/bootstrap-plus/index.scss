@@ -1,134 +1,50 @@
-@import 'node_modules/bootstrap/scss/bootstrap.scss';
-// @import './shadows.scss';
-@import './wid-height.scss';
-@import './fixersToOldBootstrap';
-@import './margin-padding.scss';
-//@import './aspectRatio.scss';
+@import "../color-scheme.scss";
+@import "node_modules/bootstrap/scss/bootstrap.scss";
+@import "./blockquote.scss";
+@import "./bootstrap-changes.scss";
+@import "./d-unset.scss";
+@import "./flex-center.scss";
+@import "./height.scss";
+@import "./list.scss";
+@import "./margin-padding.scss";
+@import "./rounded.scss";
+@import "./shadows.scss";
+@import "./sides.scss";
+@import "./variables.scss";
+@import "./z-index.scss";
 
-blockquote {
-  display: flex;
-  padding: 0 20px;
+html {
+  left: 0px;
+  width: 100%;
 }
 
-/* Blockquote main style */
-blockquote > p {
-   position: relative;
-   font-family: 'Montserrat', sans-serif;
-   font-weight: 800;
-   padding: 30px 0;
-   width: 100%;
-   max-width: 500px;
-   z-index: 1;
-   margin: 20px auto !important;
-   align-self: center;
-   border-top: solid 1px;
-   border-bottom: solid 1px;
-   position: relative;
-   color: $gray-800;
-   font-size: 25px !important;
-   text-align: center;
-   font-weight: 800;
-   line-height: 1.2;
-   margin: 0;
+#root,
+body {
+  overflow-x: hidden;
 }
 
-/* Blockquote right double quotes */
-blockquote > p:after {
-   position: absolute;
-   content: "”";
-   color: $gray-800;
-   font-size: 4rem;
-   line-height: 0;
-   bottom: -20px;
-   right: 30px;
-}
-
-/* increase header size after 600px */
-@media all and (min-width: 600px) {
-  blockquote > p {
-       font-size: 60px;
-  }
-
-}
-
-
-ul li {
-  list-style-type: disc;
-  display: list-item;
-  margin: 5px;
-}
-
-ol li {
-  display: list-item;
-  margin: 5px;
-}
-
-.center-vertically{
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-
-@mixin flexCenter($direction) {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: $direction;
-}
-
-.bs-center-row{
+.center-row {
   @extend .row;
   justify-content: space-around;
   align-items: center;
 }
 
-.flex-center-row{
-  @include flexCenter(row)
-}
-.flex-center-col{
-  @include flexCenter(column)
-}
-
-.bs-wrapper{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-    text-align: center;
+.center-vertically {
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
-.invisible {
-  display: none;
+.outline-none {
+  outline: none;
 }
 
-@media (min-width: map-get($grid-breakpoints, 'sm')){ //only works if the screen is wider than this
-  .onlyMobile{
-    display: none !important;
-  }
+.outline-none-focus {
+  outline: none;
+  @extend .shadow-5;
 }
 
-@each $bp-name, $bp-pixels in $grid-breakpoints {   //looping through xs, sm, md, lg, xl and their pixel values 
-  @media (max-width: $bp-pixels){ //only works if the screen is wider than this
-    .only-gt-#{$bp-name} {  //names like flex-center-md-40
-      display: none !important;
-    }
-  }
-
-  //classes that display their children in a row if the screen is at least $bp-pixels wide
-  .flex-center-#{$bp-name}-row {  //names like flex-center-md-40
-    @include flexCenter(row);
-    flex-direction: column;
-  }
-
-  @media (min-width: $bp-pixels){ //only works if the screen is wider than this
-    .only-lt-#{$bp-name} {
-      display: none !important;
-    }
-    .flex-center-#{$bp-name}-row {  //names like flex-center-md-40
-      flex-direction: row;
-    }
-  }
-
+.outline-none-hover {
+  outline: none;
+  box-shadow: none;
 }
-

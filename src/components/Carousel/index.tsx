@@ -11,35 +11,6 @@ export default (
   {squares, triple, ...props} : {squares: [IArticlePreviewSquare], triple?: boolean}
 ) => {
 
-  const styles = {
-    carousel: {
-      height: triple ? 700 : 466
-    },
-    container: {
-      width: 'auto',
-      position: 'relative' as const,
-      borderRadius: 5,
-      overflow: 'hidden',
-    },
-    grid: {
-      height: '80%',
-      width: '80%',
-      margin: 'auto'
-    },
-    tripleGrid: {
-      height: '80%',
-      width: '80%',
-      margin: 'auto',
-      display: 'grid',
-      gridGap: 20,
-      gridTemplate: 'repeat(3, 1fr) / repeat(2, 1fr)',
-      gridTemplateAreas:
-          `"u u"
-          "u u"
-          "d t"`,
-    }
-  }
-
   const [index, setIndex] = useState(0);
   const interval = 4000
   let timer: NodeJS.Timeout
@@ -87,11 +58,15 @@ export default (
   return (
     <div 
       id="Carousel"
-      style={styles.container}
       {...props}
     >
-      <div style={styles.carousel} >
-        <div style={triple ? styles.tripleGrid : styles.grid}>
+      <div
+        className={`
+            overflow-hidden 
+            m-auto
+            ${triple ? "triple-carousel" : "carousel"}
+          `}
+      >
           {slides.map((sqr, cnt) => (
             <PreviewSqr key={cnt} className={`slide-${cnt} fade-in`} square={sqr} />
           ))}
@@ -109,6 +84,5 @@ export default (
           ))}
         </div>
       </div>
-    </div>
   )
 }

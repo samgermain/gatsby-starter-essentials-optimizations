@@ -6,6 +6,7 @@ module.exports = {
     description: `Contains all the things that most people would want on a static blog website, like sharing, email form, drop down nav..., and lighthouse optimization plugins`,
     author: `Sam Germain`,
     authorDescription: "Full Stack Developer",
+    authorLink: "https://samgermain.com",
     themeColor: "#d2f5fb",
     siteUrl: "https://samgermain.com",
     socialLinks: {

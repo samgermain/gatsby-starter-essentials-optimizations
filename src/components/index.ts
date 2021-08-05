@@ -5,7 +5,7 @@ import Footer from './Footer'
 import Head from './Head'
 import Header from './Header'
 import Layout from './Layout'
-import Navi from './Navi'
+import Nav from './Navi'
 import ShareButtons from './ShareButtons'
 
 export {
@@ -16,6 +16,6 @@ export {
     Head,
     Header,
     Layout,
-    Navi,
+    Nav,
     ShareButtons
 }

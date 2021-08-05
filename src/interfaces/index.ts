@@ -1,4 +1,4 @@
-import { FluidObject, GatsbyImageProps} from 'gatsby-image'
+import { FixedObject, FluidObject} from 'gatsby-image'
 
 export interface EmailFormQuery {
     dataJson: {
@@ -15,14 +15,25 @@ export interface FooterQuery {
     dataJson: {
         navLinks: [NavLink],
         businessNameFull: string
-    }
+    },
+    faceIcon: {
+        childImageSharp: {
+          fixed: FixedObject | FixedObject[]
+        }
+    },
     site: {
         siteMetadata: {
+            description: string,
+            author: string,
+            authorLink: string,
+            authorDescription: string,
             themeColor: string,
+            siteUrl: string,
+            image: string,
             socialLinks: {
                 facebook: string,
                 instagram: string,
-                linkedin: string,
+                linkedIn: string,
                 twitter: string            
             }
         }

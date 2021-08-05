@@ -1,134 +1,115 @@
 import React from "react"
-import './style.scss'
-import {useStaticQuery, graphql} from 'gatsby'
+import { useStaticQuery, graphql } from "gatsby"
+import Image from "gatsby-image"
+import "./style.scss"
 
-import { faFacebookF, faTwitter, faLinkedinIn, faInstagram, IconDefinition } from '@fortawesome/free-brands-svg-icons'
-import { FontAwesomeIcon,  } from '@fortawesome/react-fontawesome'
+import {
+  faFacebookF,
+  faTwitter,
+  faLinkedinIn,
+  faInstagram,
+} from "@fortawesome/free-brands-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
-import FaceIcon from 'svg/face-icon.svg';
+import { FooterQuery } from "interfaces"
+import { FooterNav } from "components/Nav"
 
-import {FooterNav} from 'components/Navi'
-import {FooterQuery, NavLink} from 'interfaces'
+const SocialIcon = ({ icon, link, ...props }) => (
+    <a href={link} {...props}>
+      <FontAwesomeIcon className="social-icon" icon={icon} />
+    </a>
+  );
 
-const Header = () => {
-
+const Footer = ({ className = "", ...props }) => {
   const data: FooterQuery = useStaticQuery(graphql`
     query FooterQuery {
       dataJson {
         navLinks {
-          text,
+          text
           link
         }
         businessNameFull
       }
+      faceIcon: file(name: { eq: "face-icon" }) {
+        childImageSharp {
+          fixed {
+            src
+            srcSet
+            srcWebp
+            srcSetWebp
+            tracedSVG
+            base64
+          }
+        }
+      }
       site {
         siteMetadata {
-          themeColor,
-          socialLinks{
-            facebook,
-            instagram,
-            linkedin,
-            twitter            
+          themeColor
+          author
+          authorLink
+          socialLinks {
+            facebook
+            instagram
+            linkedIn
+            twitter
           }
-        } 
+        }
       }
     }
-  `)
+  `);
 
-  const iconColors = {
-      'twitter': {
-        color: "#00acee"
-      }, 
-      'facebook': {
-        color: "#3b5998"
-      },
-      'linkedin': {
-        color: "#0e76a8"
-      },
-      'instagram': {
-        color: "#fb3958"
-      }
-  }
+  const { facebook, instagram, linkedIn, twitter } = data.site.siteMetadata.socialLinks;
 
-  const styles = {
-    bottomBlurb:{
-      display: 'flex',
-      flexDirection: 'column' as const,
-      alignItems:'center',
-      marginTop: "20px",
-      fontSize:'0.7em'
-    },
-    copyright:{
-      padding: "10px"
-    },
-    footer: {
-      backgroundColor: data.site.siteMetadata.themeColor,
-      bottom: 0,
-      display: 'flex',
-      flexDirection: 'column' as const, 
-      alignItems: 'center',
-      position: 'relative' as const,
-      padding: 10,
-      boxShadow: '0 -10px 10px -10px rgba(0,0,0,0.25)',
-      overflow: 'hidden'
-    },
-    icon: {
-      width: 25
-    },
-    socialIcons: {
-      position: 'absolute' as const,
-      display: 'flex',
-      justifyContent: 'flex-end',
-      alignItems: 'center',
-      right: 0,
-      
-      top: "50%"
-    },
-    tag: {
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',  
-      height: 40
-    }
-  }
+  return (
+    <footer
+      className={`position-relative bg-light overflow-hidden shadow-2 p-3 flex-center-col ${className}`}
+      {...props}
+    >
+      <FooterNav links={data.dataJson.navLinks} />
 
-  const links: [NavLink] = data.dataJson.navLinks
-
-  const SocialIcon = ({icon, link, style}:{icon: IconDefinition, link: string, style?: any}) => (
-    <a href={link}>
-      <FontAwesomeIcon className="socialIcon" style={style} icon={icon} />
-    </a>
-  )
-
-  const {facebook, instagram, linkedin, twitter} = data.site.siteMetadata.socialLinks
-
-  return(
-    <footer style={styles.footer} >
-      <FooterNav links={links} />
-      
-      <div style={styles.bottomBlurb}>
-        <span style={styles.copyright}>{`© ${data.dataJson.businessNameFull} ${new Date().getFullYear()}`}</span>
-        <span style={styles.tag}>
-          <span>Website designed by </span>
-          <a href="https://samgermain.com">
-            Sam Germain
-            <FaceIcon style={styles.icon} />
+      <div className={`flex-center-col h6 mt-4 ${className}`}>
+        <span className="p-3">{`© Me ${new Date().getFullYear()}`}</span>
+        <span className="flex-center-row">
+          <span>Website designed by</span>
+          <div style={{ width: 3 }}></div>
+          <a className="flex-center-row" href={data.site.siteMetadata.authorLink}>
+            {data.site.siteMetadata.author}
+            <Image
+              fixed={data.faceIcon.childImageSharp.fixed}
+              className="icon"
+              alt="Picture of Sam Germain"
+            />
           </a>
         </span>
       </div>
-      <div className="flex-center-sm-row mr-sm-5 mr-2" style={styles.socialIcons}>
+      <div className="mr-sm-5 mr-2 social-icons">
         <div>
-          <SocialIcon style={iconColors.facebook} link={facebook} icon={faFacebookF} />
-          <SocialIcon style={iconColors.instagram} link={instagram} icon={faInstagram} />
+          <SocialIcon
+            aria-label="Facebook social media page"
+            link={facebook}
+            icon={faFacebookF}
+          />
+          <SocialIcon
+            aria-label="Instagram social media page"
+            link={instagram}
+            icon={faInstagram}
+          />
         </div>
         <div>
-          <SocialIcon style={iconColors.linkedin} link={linkedin} icon={faLinkedinIn} />
-          <SocialIcon style={iconColors.twitter} link={twitter} icon={faTwitter} />
+          <SocialIcon
+            aria-label="LinkedIn social media page"
+            link={linkedIn}
+            icon={faLinkedinIn}
+          />
+          <SocialIcon
+            aria-label="Twitter social media page"
+            link={twitter}
+            icon={faTwitter}
+          />
         </div>
       </div>
-      
     </footer>
-  )
+  );
 }
 
-export default Header
+export default Footer;

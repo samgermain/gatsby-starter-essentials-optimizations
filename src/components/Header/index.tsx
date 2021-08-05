@@ -2,7 +2,7 @@ import React from "react"
 import {useStaticQuery, graphql} from 'gatsby'
 import {MyImageProps, NavLink, NavBarProps} from 'interfaces'
 
-import Nav, { ScrollNav } from 'components/Navi'
+import Nav, { ScrollNav } from 'components/Nav'
 
 const Header = ({page}) => {
 
