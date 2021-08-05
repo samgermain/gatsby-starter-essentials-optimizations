@@ -1,7 +1,6 @@
-const path = require(`path`)
+const path = require(`path`);
 
 module.exports = {
-  
   siteMetadata: {
     title: `Gatsby Starter Essentials & Pagespeed Optimization`,
     description: `Contains all the things that most people would want on a static blog website, like sharing, email form, drop down nav..., and lighthouse optimization plugins`,
@@ -19,13 +18,13 @@ module.exports = {
     image:
       "https://suddenlysask.com/static/cc701b5ed9329f7c62ace15b5dfec7e6/d00b9/cat.webp",
   },
-  flags:{
-    DEV_SSR: true,
-    FAST_DEV: true,
+  flags: {
+    DEV_SSR: false,
+    FAST_DEV: false,
     DEV_WEBPACK_CACHE: false,
-    PRESERVE_FILE_DOWNLOAD_CACHE: true,
+    PRESERVE_FILE_DOWNLOAD_CACHE: false,
     PARALLEL_SOURCING: false,
-    LMDB_STORE: false
+    LMDB_STORE: false,
   },
   plugins: [
     {
@@ -46,11 +45,12 @@ module.exports = {
       resolve: `gatsby-plugin-create-client-paths`,
       options: { prefixes: [`/contact/*`] },
     },
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
-          "gatsby-remark-relative-images",
+          // "gatsby-remark-relative-images",
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -79,7 +79,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-image`,
-    `gatsby-plugin-sharp`,
+
     `gatsby-transformer-sharp`,
     `gatsby-plugin-typescript`,
     `gatsby-plugin-react-helmet`,
@@ -142,4 +142,4 @@ module.exports = {
     //   },
     // },
   ],
-}
+};

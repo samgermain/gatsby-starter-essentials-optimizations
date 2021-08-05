@@ -62,50 +62,6 @@ Typescript
 Bootstrap
 
 SCSS
-
-## Dependencies
-@fortawesome/fontawesome-svg-core
-@fortawesome/free-brands-svg-icons 
-@fortawesome/free-solid-svg-icons
-@fortawesome/react-fontawesome
-@pittica/gatsby-plugin-recaptcha
-@types/node
-bootstrap
-emailjs-com
-gatsby
-gatsby-background-image
-gatsby-image
-gatsby-plugin-create-client-paths
-gatsby-plugin-manifest
-gatsby-plugin-netlify
-gatsby-plugin-offline
-gatsby-plugin-purgecss
-gatsby-plugin-react-helmet
-gatsby-plugin-react-svg
-gatsby-plugin-root-import
-gatsby-plugin-sass
-gatsby-plugin-sharp
-gatsby-plugin-sitemap
-gatsby-plugin-typescript
-gatsby-react-router-scroll
-gatsby-remark-images
-gatsby-remark-relative-images
-gatsby-source-filesystem
-gatsby-transformer-json
-gatsby-transformer-remark
-gatsby-transformer-sharp
-node-sass
-prettier
-prop-types
-react
-react-bootstrap
-react-dom
-react-helmet
-react-router-dom
-react-scroll
-react-share
-styled-components
-
 ## 🧐 What's inside?
 
 A quick look at the top-level files and directories you'll see in a Gatsby project.

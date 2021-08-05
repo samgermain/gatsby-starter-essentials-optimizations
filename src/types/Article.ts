@@ -1,4 +1,4 @@
-import { IGatsbyImageData } from 'gatsby-plugin-image';
+import { ImageDataLike } from 'gatsby-plugin-image';
 import { IArticle, IArticleMetadata } from 'interfaces';
 
 class Article {
@@ -6,7 +6,10 @@ class Article {
     date: Date
     title: string
     author: string 
-    featuredImage: IGatsbyImageData
+    featuredImage: {
+        childImageSharp: ImageDataLike,
+        publicURL: string
+    }
     slug: string
     description: string
     html: string
@@ -22,9 +25,7 @@ class Article {
                 date,
                 author, 
                 description, 
-                featuredImage: {
-                    childImageSharp
-                }
+                featuredImage
             }
         } = data
 
@@ -32,7 +33,7 @@ class Article {
         this.slug = slug
         this.author = author
         this.description = description
-        this.featuredImage = childImageSharp
+        this.featuredImage = featuredImage
         this.date = new Date(date)
         this.html = html
     }
@@ -49,7 +50,7 @@ class Article {
         return {
           description: this.description,
           title: title,
-          image: 'this.featuredImage.publicURL',
+          image: this.featuredImage.publicURL,
           slug: this.slug
         }
     }

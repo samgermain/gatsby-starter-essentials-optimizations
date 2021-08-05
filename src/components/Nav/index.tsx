@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react"
 import "./style.scss"
-import { Link } from "react-router-dom"
+import { Link } from "gatsby"
 
 import { NavLink } from 'interfaces'
 import { useOnClickOutside } from "hooks"
@@ -18,16 +18,14 @@ const PageLinks = (
   { links, className = "", page}:
   { links: [NavLink], className?: string, page: Page}
 ) => {
-
   return (
     <>
-      {Object.keys(links).map(key => {
-        const active = page == `/${key}` || (page == "/" && key == "home")
-
+      {links.map(({link, text}) => {
+        const active = page == text || (page == "/" && text == "Home")
         return (
           <Link
-            to={links[key]}
-            key={key}
+            to={link}
+            key={text}
             className={`
               text-nowrap 
               nav-link 
@@ -39,7 +37,7 @@ const PageLinks = (
               ${className}
             `}
           >
-            {key}
+            {text}
           </Link>
         )
       })}
@@ -110,9 +108,9 @@ const Layout = ({ sticky, page, children }:
   }, [])
 
   const style = {
-    top: sticky && isHidden && -stickyHeight,
+    top: sticky && isHidden ? -stickyHeight : 0,
     height: stickyHeight,
-    transition: ".3s",
+    transition: ".3s"
   }
 
   useOnClickOutside(node, () => setOpen(false))
@@ -126,9 +124,8 @@ const Layout = ({ sticky, page, children }:
           p-0 
           my-auto 
           z-index-4 
-          shadow-1 
-          t-0
-          ${sticky && !isHidden && "position-fixed"}
+          
+          ${sticky && "position-fixed"}
         `}
         style={style}
       >

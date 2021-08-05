@@ -1,4 +1,4 @@
-import { IGatsbyImageData } from 'gatsby-plugin-image'
+import { ImageDataLike } from 'gatsby-plugin-image'
 
 export interface EmailFormQuery {
     dataJson: {
@@ -16,9 +16,7 @@ export interface FooterQuery {
         navLinks: [NavLink],
         businessNameFull: string
     },
-    faceIcon: {
-        childImageSharp: IGatsbyImageData
-    },
+    faceIcon: ImageDataLike,
     site: {
         siteMetadata: {
             description: string,
@@ -49,7 +47,8 @@ export interface IArticle{
         author: string
         description: string
         featuredImage: {
-            childImageSharp:IGatsbyImageData
+            childImageSharp: ImageDataLike,
+            publicURL: string
         }
     }
 }
@@ -81,9 +80,7 @@ export interface IHomePageQuery{
                 frontmatter: {
                     title: string
                     featuredImage: {
-                        childImageSharp: {
-                            fluid: IGatsbyImageData
-                        }
+                        childImageSharp: ImageDataLike
                     }
                 }          
             }
@@ -124,7 +121,7 @@ export interface IArticlePage{
 export interface IArticlePreviewSquare{
     title: string,
     slug: string,
-    imgProps: IGatsbyImageData
+    imgProps: ImageDataLike
 }
 
 export interface IHeaderQuery{
@@ -142,7 +139,7 @@ export interface IHeaderQuery{
     }
 }
 export interface MyImageProps {
-    imgProps: IGatsbyImageData,
+    imgProps: ImageDataLike,
     alt: string,
     title: string
 }
@@ -158,8 +155,6 @@ export interface NavBarProps {
         scrollLinks: [NavLink]
     },
     logo: {
-        childImageSharp: {
-          fluid: IGatsbyImageData
-        }
+        childImageSharp: ImageDataLike
     }
 }

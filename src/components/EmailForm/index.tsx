@@ -84,7 +84,7 @@ export default (
             {...props}
         >
             {['Name', 'Email', 'Subject', 'Message'].map(label => (
-                <div className="row w-100 my-2">
+                <div className="row w-100 my-2" key={label}>
                     <label className="col-sm-2"  >
                         {label}
                     </label>

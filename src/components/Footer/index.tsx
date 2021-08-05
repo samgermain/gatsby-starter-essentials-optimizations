@@ -1,6 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import "./style.scss"
 
 import {
@@ -32,7 +32,7 @@ const Footer = ({ className = "", page, ...props }) => {
       }
       faceIcon: file(name: { eq: "face-icon" }) {
         childImageSharp {
-            gatsbyImageData(layout: FIXED, width: 30)
+            gatsbyImageData(placeholder: BLURRED, width: 30, formats: [WEBP])
         }
       }
       site {
@@ -50,6 +50,7 @@ const Footer = ({ className = "", page, ...props }) => {
       }
     }
   `);
+  const image = getImage(data.faceIcon)
 
   const { facebook, instagram, linkedIn, twitter } = data.site.siteMetadata.socialLinks;
 
@@ -68,7 +69,7 @@ const Footer = ({ className = "", page, ...props }) => {
           <a className="flex-center-row" href={data.site.siteMetadata.authorLink}>
             {data.site.siteMetadata.author}
             <GatsbyImage
-              image={data.faceIcon.childImageSharp}
+              image={image}
               className="icon"
               alt="Picture of Sam Germain"
             />
