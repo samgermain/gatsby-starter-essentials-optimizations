@@ -20,7 +20,12 @@ module.exports = {
       "https://suddenlysask.com/static/cc701b5ed9329f7c62ace15b5dfec7e6/d00b9/cat.webp",
   },
   flags:{
-    DEV_SSR: true
+    DEV_SSR: true,
+    FAST_DEV: true,
+    DEV_WEBPACK_CACHE: false,
+    PRESERVE_FILE_DOWNLOAD_CACHE: true,
+    PARALLEL_SOURCING: false,
+    LMDB_STORE: false
   },
   plugins: [
     {
