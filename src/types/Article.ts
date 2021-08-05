@@ -1,4 +1,4 @@
-import { GatsbyImageProps } from 'gatsby-image';
+import { IGatsbyImageData } from 'gatsby-plugin-image';
 import { IArticle, IArticleMetadata } from 'interfaces';
 
 class Article {
@@ -6,7 +6,7 @@ class Article {
     date: Date
     title: string
     author: string 
-    featuredImage: GatsbyImageProps | GatsbyImageProps[]
+    featuredImage: IGatsbyImageData
     slug: string
     description: string
     html: string

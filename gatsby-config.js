@@ -7,12 +7,12 @@ module.exports = {
     author: `Sam Germain`,
     authorDescription: "Full Stack Developer",
     authorLink: "https://samgermain.com",
-    themeColor: "#d2f5fb",
-    siteUrl: "https://samgermain.com",
+    themeColor: "#49eee8",
+    siteUrl: "https://gatsby-starter-essentials-optimization.netlify.app",
     socialLinks: {
       facebook: "/",
       instagram: "/",
-      linkedin: "https://linkedin.com/in/samgermain",
+      linkedIn: "https://linkedin.com/in/samgermain",
       twitter: "/",
     },
     image:
@@ -36,18 +36,6 @@ module.exports = {
     {
       resolve: `gatsby-plugin-create-client-paths`,
       options: { prefixes: [`/contact/*`] },
-    },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/assets/images/gatsby-icon-128.png`, // This path is relative to the root of the site.
-      },
     },
     {
       resolve: `gatsby-transformer-remark`,
@@ -113,7 +101,7 @@ module.exports = {
         short_name: `starter`,
         start_url: `/`,
         background_color: `#fff`,
-        theme_color: `#d2f5fb`,
+        theme_color: `#49eee8`,
         display: `minimal-ui`,
         icon: `src/assets/images/gatsby-icon-128.png`,
         icon_options: {

@@ -6,7 +6,7 @@
  */
 
 import React from 'react'
-import "./style.scss"
+import 'styles/main.scss'
 
 import {Head, Header, Footer} from "components"
 import {Page} from 'types'
@@ -22,7 +22,7 @@ const Layout = ({ metadata, page, children, ...props } : {metadata?: any, page: 
       >
         <main>{children}</main>
       </div>
-      <Footer />
+      <Footer page={page} />
     </div>
   )
 }

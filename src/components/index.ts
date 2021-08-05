@@ -5,7 +5,7 @@ import Footer from './Footer'
 import Head from './Head'
 import Header from './Header'
 import Layout from './Layout'
-import Nav from './Navi'
+import Nav from './Nav'
 import ShareButtons from './ShareButtons'
 
 export {

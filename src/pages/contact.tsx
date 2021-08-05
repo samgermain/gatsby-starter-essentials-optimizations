@@ -1,6 +1,5 @@
 import React from "react"
 import {graphql} from 'gatsby'
-import 'styles/main.scss'
 
 import {EmailForm, Layout} from "components"
 import {Page} from 'types'
@@ -36,7 +35,7 @@ const ContactPage = ({data}:{data:IContactPageQuery}) => {
     const metadata = {
         title: 'Contact',
         slug: '/contact'
-    }
+        }
 
   return (
     <Layout metadata={metadata} page={Page.Contact}>

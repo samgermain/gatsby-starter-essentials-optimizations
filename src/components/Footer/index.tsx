@@ -1,6 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Image from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import "./style.scss"
 
 import {
@@ -20,7 +20,7 @@ const SocialIcon = ({ icon, link, ...props }) => (
     </a>
   );
 
-const Footer = ({ className = "", ...props }) => {
+const Footer = ({ className = "", page, ...props }) => {
   const data: FooterQuery = useStaticQuery(graphql`
     query FooterQuery {
       dataJson {
@@ -32,14 +32,7 @@ const Footer = ({ className = "", ...props }) => {
       }
       faceIcon: file(name: { eq: "face-icon" }) {
         childImageSharp {
-          fixed {
-            src
-            srcSet
-            srcWebp
-            srcSetWebp
-            tracedSVG
-            base64
-          }
+            gatsbyImageData(layout: FIXED, width: 30)
         }
       }
       site {
@@ -65,7 +58,7 @@ const Footer = ({ className = "", ...props }) => {
       className={`position-relative bg-light overflow-hidden shadow-2 p-3 flex-center-col ${className}`}
       {...props}
     >
-      <FooterNav links={data.dataJson.navLinks} />
+      <FooterNav page={page} links={data.dataJson.navLinks} />
 
       <div className={`flex-center-col h6 mt-4 ${className}`}>
         <span className="p-3">{`© Me ${new Date().getFullYear()}`}</span>
@@ -74,8 +67,8 @@ const Footer = ({ className = "", ...props }) => {
           <div style={{ width: 3 }}></div>
           <a className="flex-center-row" href={data.site.siteMetadata.authorLink}>
             {data.site.siteMetadata.author}
-            <Image
-              fixed={data.faceIcon.childImageSharp.fixed}
+            <GatsbyImage
+              image={data.faceIcon.childImageSharp}
               className="icon"
               alt="Picture of Sam Germain"
             />

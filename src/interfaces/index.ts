@@ -1,4 +1,4 @@
-import { FixedObject, FluidObject} from 'gatsby-image'
+import { IGatsbyImageData } from 'gatsby-plugin-image'
 
 export interface EmailFormQuery {
     dataJson: {
@@ -17,9 +17,7 @@ export interface FooterQuery {
         businessNameFull: string
     },
     faceIcon: {
-        childImageSharp: {
-          fixed: FixedObject | FixedObject[]
-        }
+        childImageSharp: IGatsbyImageData
     },
     site: {
         siteMetadata: {
@@ -51,7 +49,7 @@ export interface IArticle{
         author: string
         description: string
         featuredImage: {
-            childImageSharp:FluidObject | FluidObject[]
+            childImageSharp:IGatsbyImageData
         }
     }
 }
@@ -84,7 +82,7 @@ export interface IHomePageQuery{
                     title: string
                     featuredImage: {
                         childImageSharp: {
-                            fluid: FluidObject | FluidObject[]
+                            fluid: IGatsbyImageData
                         }
                     }
                 }          
@@ -126,7 +124,7 @@ export interface IArticlePage{
 export interface IArticlePreviewSquare{
     title: string,
     slug: string,
-    imgProps: FluidObject | FluidObject[]
+    imgProps: IGatsbyImageData
 }
 
 export interface IHeaderQuery{
@@ -144,7 +142,7 @@ export interface IHeaderQuery{
     }
 }
 export interface MyImageProps {
-    imgProps: FluidObject | FluidObject[],
+    imgProps: IGatsbyImageData,
     alt: string,
     title: string
 }
@@ -161,7 +159,7 @@ export interface NavBarProps {
     },
     logo: {
         childImageSharp: {
-          fluid: FluidObject | FluidObject[]
+          fluid: IGatsbyImageData
         }
     }
 }

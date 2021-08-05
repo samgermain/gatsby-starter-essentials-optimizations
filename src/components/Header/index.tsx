@@ -1,10 +1,11 @@
 import React from "react"
 import {useStaticQuery, graphql} from 'gatsby'
-import {MyImageProps, NavLink, NavBarProps} from 'interfaces'
+import { NavLink, NavBarProps} from 'interfaces'
 
 import Nav, { ScrollNav } from 'components/Nav'
+import {Page} from 'types';
 
-const Header = ({page}) => {
+const Header = ({page}:{page:Page}) => {
 
   const navBarProps: NavBarProps = useStaticQuery(graphql`
     query NavBarQuery {
@@ -18,38 +19,18 @@ const Header = ({page}) => {
           link
         }
       }
-      logo: file(name: {eq: "gatsby-icon-128"}) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid_withWebp_noBase64
-          }
-        }
-      }
     }
   `)
-
-  const logoImageProps: MyImageProps = {
-    imgProps: navBarProps.logo.childImageSharp.fluid,
-    alt: "Gatsby Logo",
-    title: "Gatsby Logo"
-  }
 
   const links: [NavLink] = navBarProps.dataJson.navLinks
   const scrollLinks: [NavLink] = navBarProps.dataJson.scrollLinks
 
   return(
-    <header style={styles.header} >
-      <ScrollNav page={page} imgProps={logoImageProps} links={scrollLinks} sticky={true} />
-      <Nav page={page} imgProps={logoImageProps} links={links} />
+    <header className="shadow-2" >
+      <ScrollNav page={page} links={scrollLinks} sticky={true} />
+      <Nav page={page} links={links} />
     </header>
   )
 }
-
-const styles = {
-  header:{
-    boxShadow: "0 10px 10px -10px rgba(0,0,0,0.25)"
-  }
-}
-
 
 export default Header

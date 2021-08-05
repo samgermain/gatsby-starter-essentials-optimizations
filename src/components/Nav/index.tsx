@@ -1,30 +1,28 @@
 import React, { useState, useEffect, useRef } from "react"
 import "./style.scss"
 import { Link } from "react-router-dom"
-import url from "url"
 
-import { NavLink } from "types"
+import { NavLink } from 'interfaces'
 import { useOnClickOutside } from "hooks"
+import {Page} from 'types'
 
 import Burger from "./Burger"
 import BurgerMenu from "./BurgerMenu"
 import ScrollLink from "./ScrollLink"
 
-import ReactLogo from "svg/react-icon.svg"
+import ReactLogo from "svg/gatsby-icon.svg"
 
 const stickyHeight = 60 //Height of the sticky navbar
 
-const PageLinks = ({ links, className = "" }) => {
-  const [urlPath, setUrlPath] = useState("")
-
-  useEffect(() => {
-    setUrlPath(url.parse(window.location.href).pathname)
-  }, [window.location.href])
+const PageLinks = (
+  { links, className = "", page}:
+  { links: [NavLink], className?: string, page: Page}
+) => {
 
   return (
     <>
       {Object.keys(links).map(key => {
-        const active = urlPath == `/${key}` || (urlPath == "/" && key == "home")
+        const active = page == `/${key}` || (page == "/" && key == "home")
 
         return (
           <Link
@@ -49,10 +47,32 @@ const PageLinks = ({ links, className = "" }) => {
   )
 }
 
-const NavBrand = ({ children }) => {
-  const urlPath = url.parse(window.location.href).pathname
+const ScrollLinks = (
+  {links, className} : {links: [NavLink], className? : string}
+) => {
+  return (
+    <>
+      {links.map(({text, link}) => (
+          <ScrollLink
+            className={
+              `
+              text-nowrap 
+              nav-link 
+              ${className}
+            `}
+            key={link}
+            to={link}
+          >
+          {text}
+        </ScrollLink>
+      ))}
+    </>
+  )
+}
 
-  if (urlPath === "/home" || urlPath == "/") {
+const NavBrand = ({ children, page }:{ children:any, page: Page }) => {
+
+  if ( page == "/") {
     return (
       <ScrollLink to="root" className="cursor-pointer mx-3 p-0 h-100">
         {children}
@@ -67,7 +87,9 @@ const NavBrand = ({ children }) => {
   }
 }
 
-const Layout = ({ sticky, children }: { sticky: boolean, children: any }) => {
+const Layout = ({ sticky, page, children }: 
+  { sticky: boolean, page: Page, children: any }
+) => {
   const [isHidden, setIsHidden] = useState(true)
   const [open, setOpen] = useState(false)
   const node = useRef()
@@ -119,7 +141,7 @@ const Layout = ({ sticky, children }: { sticky: boolean, children: any }) => {
           {children}
         </BurgerMenu>
         <nav style={style} className="navbar w-100 bg-light px-4">
-          <NavBrand>
+          <NavBrand page={page}>
             <ReactLogo
               className="h-100"
               title="React Logo"
@@ -143,14 +165,26 @@ const Layout = ({ sticky, children }: { sticky: boolean, children: any }) => {
   )
 }
 
-export const FooterNav = ({ links }) => (
+export const FooterNav = ({ links, page }: { links: [NavLink], page: Page }) => (
   <nav className="footer-nav nav nav-pills">
-    <PageLinks links={links} />
+    <PageLinks links={links} page={page}/>
   </nav>
 )
 
-export default ({ links: [NavLink], sticky = "" }) => (
-  <Layout sticky={sticky}>
-    <PageLinks links={links} />
+export const ScrollNav = (
+  {links, page, sticky}:
+  {links: [NavLink], page: Page, sticky?: boolean}
+) => (
+  <Layout page={page} sticky={sticky}>
+    <ScrollLinks links={links}/>
+  </Layout>
+)
+
+export default (
+  { links, page, sticky = false }:
+  { links: [NavLink], page: Page, sticky?: boolean}
+) => (
+  <Layout page={page} sticky={sticky}>
+    <PageLinks links={links} page={page}/>
   </Layout>
 )
